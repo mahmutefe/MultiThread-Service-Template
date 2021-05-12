@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BatchProcessing", "BatchProcessing.csproj", "{FB7D0A62-57AD-4056-80F3-408C0F5D836C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FB7D0A62-57AD-4056-80F3-408C0F5D836C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB7D0A62-57AD-4056-80F3-408C0F5D836C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB7D0A62-57AD-4056-80F3-408C0F5D836C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB7D0A62-57AD-4056-80F3-408C0F5D836C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {66A824A0-66CA-44B3-85E3-CB9103B7081B}
+	EndGlobalSection
+EndGlobal
