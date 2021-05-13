@@ -1,27 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using BatchProcessing.Core.Entity;
+﻿using BatchProcessing.Entry;
+using System;
 using System.Threading;
-using BatchProcessing.Core.Business;
-using BatchProcessing.Entry;
 
 namespace BatchProcessing
 {
-    public class ASysPendingTransactionReader : WorkerThread
+    public class ASysSampleWorker1Thread : WorkerThread
     {
         AppContext context = null;
 
-        public ASysPendingTransactionReader(AppContext context)
+        public ASysSampleWorker1Thread(AppContext context)
         {
             this.context = context;
-            this.ConfigThreadController(this.context.batchProcessingDefinition.PendingTransactionReaderThreadCount);
+            this.ConfigThreadController(this.context.BatchProcessingDefinition.PendingTransactionReaderThreadCount);
         }
 
         protected override void WorkerJob()
         {
-            Logger.Logger.AddSystemInfoLog(String.Format("[{0}] - ASysPendingTransactionReader started..", Thread.CurrentThread.ManagedThreadId));
+            Logger.Logger.AddSystemInfoLog(String.Format("[{0}] - ASysSampleWorker1Thread started..", Thread.CurrentThread.ManagedThreadId));
             while (IsUp)
             {
                 DoJob();
@@ -35,7 +30,9 @@ namespace BatchProcessing
         private void DoJob()
         {
             Logger.Logger.AddSystemInfoLog(string.Format("[{0}]-[{1}] File processiong", "FileName", "FileId"), Thread.CurrentThread.ManagedThreadId);
-            
+
+            //Write code here
+
             Logger.Logger.flushLogQueue(Thread.CurrentThread.ManagedThreadId);
         }
     }

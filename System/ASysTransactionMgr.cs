@@ -1,35 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using BatchProcessing.Entry;
+﻿using BatchProcessing.Entry;
 
 namespace BatchProcessing
 {
     public class ASysTransactionMgr
     {
-        ASysTransactionFileReader aSysTransactionFileReader = null;
-        ASysPendingTransactionReader aSysPendingTransactionReader = null;
-        AppContext context = null;
+        ASysSampleWorker1Thread aSysSampleWorker1Thread = null;
+        ASysSampleWorker2Thread aSysSampleWorker2Thread = null;
+
+        private AppContext context = null;
 
         public ASysTransactionMgr(AppContext context)
         {
             this.context = context;
-            aSysTransactionFileReader = new ASysTransactionFileReader(context);
-            aSysPendingTransactionReader = new ASysPendingTransactionReader(context);
+            aSysSampleWorker1Thread = new ASysSampleWorker1Thread(context);
+            aSysSampleWorker2Thread = new ASysSampleWorker2Thread(context);
             
         }
 
         public void Start()
         {
-            aSysPendingTransactionReader.Start();
-            aSysTransactionFileReader.Start();
+            aSysSampleWorker1Thread.Start();
+            aSysSampleWorker2Thread.Start();
         }
 
         public void Stop()
         {
-            aSysPendingTransactionReader.Stop();
-            aSysTransactionFileReader.Stop();
+            aSysSampleWorker1Thread.Stop();
+            aSysSampleWorker2Thread.Stop();
         }
     }
 }

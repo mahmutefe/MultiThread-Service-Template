@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace BatchProcessing.Core.Entity
 {
-    public class Sample2EntityClass
+    public class SampleClass1Entity
     {
         public Int64 Id { get; set; }
         public string InsertUser { get; set; }

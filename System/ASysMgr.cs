@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using BatchProcessing.Entry;
-using BatchProcessing.Core.Business;
+﻿using BatchProcessing.Core.Business;
 using BatchProcessing.Core.Entity;
+using BatchProcessing.Entry;
 
 namespace BatchProcessing
 {
@@ -15,7 +11,7 @@ namespace BatchProcessing
 
         public ASysMgr()
         {
-            BatchProcessingDefinition def = Common.getBatchProcessingDefinition();
+            BatchProcessingDefinitionEntity def = Common.GetBatchProcessingDefinition();
             context = new AppContext(def);
             aSysTransactionMgr = new ASysTransactionMgr(context);
         }

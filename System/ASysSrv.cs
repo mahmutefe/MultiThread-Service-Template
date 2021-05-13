@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.ComponentModel;
 using System.ServiceProcess;
-using System.Threading;
-using System.Web;
-using System.IO;
-using System.Configuration;
-using System.ComponentModel;
 
 namespace BatchProcessing
 {

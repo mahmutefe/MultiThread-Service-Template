@@ -1,16 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using BatchProcessing.Core.Entity;
+using System;
 using System.Configuration;
 using System.IO;
-using BatchProcessing.Core.Entity;
 
 namespace BatchProcessing.Entry
 {
     public class AppContext
     {
-
+        /// <summary>
+        /// Gets connection string from App.Config file
+        /// </summary>
         public static string ConnectionString
         {
             get
@@ -19,8 +18,11 @@ namespace BatchProcessing.Entry
             }
         }
 
-        private BatchProcessingDefinition def;
-        public BatchProcessingDefinition batchProcessingDefinition
+        private BatchProcessingDefinitionEntity def;
+        /// <summary>
+        /// Get Batch process processing definition
+        /// </summary>
+        public BatchProcessingDefinitionEntity BatchProcessingDefinition
         {
             get
             {
@@ -28,12 +30,21 @@ namespace BatchProcessing.Entry
             }
         }
 
-        public AppContext(BatchProcessingDefinition def)
+        /// <summary>
+        /// Gets Application context
+        /// </summary>
+        /// <param name="def"></param>
+        public AppContext(BatchProcessingDefinitionEntity def)
         {
             this.def = def;
         }
 
-        public byte[] readAllBytes(string fileName)
+        /// <summary>
+        /// Reads file
+        /// </summary>
+        /// <param name="fileName">File name</param>
+        /// <returns>File content as byte array</returns>
+        public byte[] ReadAllBytes(string fileName)
         {
             byte[] buffer = null;
             try
@@ -52,27 +63,47 @@ namespace BatchProcessing.Entry
             return buffer;
         }
 
-        public string getTxnFilePattern()
+        /// <summary>
+        /// Gets Log File pattern from App.config file
+        /// </summary>
+        /// <returns></returns>
+        public string GetTxnFilePattern()
         {
             return ConfigurationManager.AppSettings["TXN_FILE_PATTERN"];
         }
 
-        public string getTxnFilePath()
+        /// <summary>
+        /// Gets Log File path from App.config file
+        /// </summary>
+        /// <returns></returns>
+        public string GetTxnFilePath()
         {
             return ConfigurationManager.AppSettings["TXN_FILE_PATH"];
         }
 
-        public string getTxnTempPath()
+        /// <summary>
+        /// Gets Temp File pattern from App.config file
+        /// </summary>
+        /// <returns></returns>
+        public string GetTxnTempPath()
         {
             return ConfigurationManager.AppSettings["TXN_TEMP_PATH"];
         }
 
-        public string getTxnArchivePath()
+        /// <summary>
+        /// Gets archived File pattern from App.config file
+        /// </summary>
+        /// <returns></returns>
+        public string GetTxnArchivePath()
         {
             return ConfigurationManager.AppSettings["TXN_ARCHIVE_PATH"];
         }
 
-        public string getTxnErrorPath()
+        /// <summary>
+        /// Gets error File pattern from App.config file
+        /// </summary>
+        /// <returns></returns>
+        public string GetTxnErrorPath()
         {
             return ConfigurationManager.AppSettings["TXN_ERROR_PATH"];
         }
